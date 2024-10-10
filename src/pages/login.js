@@ -1,9 +1,8 @@
-// src/pages/Login.js
+// src/components/Login.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // Import to handle navigation
-import { signInWithEmailAndPassword } from 'firebase/auth';  // Import necessary Firebase Auth function
-import { doc, getDoc } from 'firebase/firestore';  // Import Firestore functions
-import { auth, db } from '../firebase';  // Import initialized Firebase services
+import { loginUser } from '../services/authService';  // Import login service
+import { getUserData } from '../services/firestoreService';  // Import Firestore service
 import '../style/login.css';  // Ensure the path to CSS is correct
 
 function Login() {
@@ -16,24 +15,15 @@ function Login() {
     e.preventDefault();
     setError('');  // Clear previous errors
     try {
-      // Sign in with email and password using Firebase Auth
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
+      const user = await loginUser(email, password);  // Use the service function to login
 
-      // Get the user's document from the 'users' collection using the UID
-      const userDocRef = doc(db, 'users', user.uid);
-      const userDoc = await getDoc(userDocRef);
+      const userData = await getUserData(user.uid);  // Use the service function to get user data
 
-      if (userDoc.exists()) {
-        const userData = userDoc.data();
-        if (userData.role === 'admin') {
-          console.log('Admin logged in!');
-          navigate('/admin-dashboard');  // Navigate to the Admin Dashboard page
-        } else {
-          setError('You are not authorized as an admin.');
-        }
+      if (userData.role === 'admin') {
+        console.log('Admin logged in!');
+        navigate('/admin-dashboard');  // Navigate to the Admin Dashboard page
       } else {
-        setError('User data not found.');
+        setError('You are not authorized as an admin.');
       }
     } catch (err) {
       setError(err.message);  // Display error message

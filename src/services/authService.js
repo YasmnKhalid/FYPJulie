@@ -1,6 +1,13 @@
 // src/services/authService.js
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Import necessary Firebase Auth functions
 import { auth } from '../firebase';  // Import the initialized Firebase Auth instance
+import { getAuth } from 'firebase/auth';
+
+// Fetch the currently logged-in user
+export const getCurrentUser = () => {
+  const auth = getAuth();
+  return auth.currentUser;
+};
 
 /**
  * Function to handle user login.

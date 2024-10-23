@@ -4,6 +4,9 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
+
+
+
 function CustomNavbar() {
   return (
     <Navbar bg="light" expand="lg" style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
@@ -14,7 +17,7 @@ function CustomNavbar() {
 
           {/* Caretaker dropdown */}
           <NavDropdown title="Caretaker" id="caretaker-dropdown">
-           {/*<NavDropdown.Item href="#application">Caretaker Application</NavDropdown.Item>*/}
+            {/*<NavDropdown.Item href="#application">Caretaker Application</NavDropdown.Item>*/}
             <NavDropdown.Item href="#list">Caretaker List</NavDropdown.Item>
           </NavDropdown>
 
@@ -32,7 +35,7 @@ function CustomNavbar() {
 
         {/* Icons on the right side with equal spacing */}
         <Nav className="d-flex align-items-center">
-          <Nav.Link href="#profile" className="ms-3">
+          <Nav.Link href="/admin-profile-page" className="ms-3">
             <FontAwesomeIcon icon={faUserCircle} style={{ fontSize: '24px', color: '#007bff' }} />
           </Nav.Link>
         </Nav>

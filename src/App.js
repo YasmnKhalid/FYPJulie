@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/login';
 import AdminDashboard from './pages/AdminDashboard';  // Import the Admin Dashboard
 import AdminProfilePage from './pages/AdminProfilePage';
+import GuardianList from './pages/GuardianList';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add Admin Dashboard Route */}
           <Route path="/admin-profile-page" element={<AdminProfilePage />} /> {/* Add Admin Profile Page Route */}
+          <Route path="/guardian-list-page" element={<GuardianList />} /> {/* Add Admin Profile Page Route */}
         </Routes>
       </div>
     </Router>

@@ -2,6 +2,8 @@
 import { doc, getDoc, updateDoc } from 'firebase/firestore'; // Import necessary Firestore functions
 import { db } from '../firebase';  // Import the initialized Firestore instance
 import { getAuth, updatePassword } from 'firebase/auth';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+   
 
 // Function to update the admin's profile in Firestore
 export const updateAdminProfile = async (admin) => {
@@ -53,3 +55,24 @@ export const getUserData = async (uid) => {
   }
 };
 
+//Function to amik data guardan dari db
+
+export const getGuardians = async () => {
+  const q = query(collection(db, 'users'), where('role', '==', 'guardian'));
+  const querySnapshot = await getDocs(q);
+  
+  // Map through the documents and ensure necessary fields have values
+  return querySnapshot.docs.map(doc => {
+    const data = doc.data();
+    
+    // Return the data with default values if some fields are missing
+    return {
+      id: data.id || '', 
+      name: data.name || 'Unknown', 
+      state: data.state || '', 
+      dependentName: data.dependentName || '', 
+      dependentStatus: data.dependentStatus || '', 
+      caretakerServiceStatus: data.caretakerServiceStatus || '' 
+    };
+  });
+};

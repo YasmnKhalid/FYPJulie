@@ -29,7 +29,7 @@ function CustomNavbar() {
 
           {/* Guardian dropdown */}
           <NavDropdown title="Guardian" id="guardian-dropdown">
-            <NavDropdown.Item href="#list">Guardian Profile List</NavDropdown.Item>
+            <NavDropdown.Item href="/guardian-list-page">Guardian Profile List</NavDropdown.Item>
           </NavDropdown>
         </Nav>
 

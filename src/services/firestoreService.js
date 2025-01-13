@@ -3,6 +3,9 @@ import { doc, getDoc, updateDoc } from 'firebase/firestore'; // Import necessary
 import { db } from '../firebase';  // Import the initialized Firestore instance
 import { getAuth, updatePassword } from 'firebase/auth';
 import { collection, query, where, getDocs } from 'firebase/firestore';
+import { getFirestore} from 'firebase/firestore';
+
+const ab = getFirestore();
    
 
 // Function to update the admin's profile in Firestore
@@ -55,24 +58,60 @@ export const getUserData = async (uid) => {
   }
 };
 
-//Function to amik data guardan dari db
+
+
+
+
+// Fetch guardian details by ID
+export const getGuardianById = async (guardianId) => {
+  if (!guardianId) return null;
+  const guardianDoc = await getDoc(doc(db, 'users', guardianId)); // Assuming guardians are in 'users' collection
+  if (guardianDoc.exists()) {
+    return guardianDoc.data();
+  }
+  return null;
+};
+
+
+export const getCaretakers = async () => {
+  const caretakers = [];
+  const q = query(collection(db, 'users'), where('role', '==', 'caretaker')); // Query where role == caretaker
+
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    caretakers.push({ id: doc.id, ...doc.data() }); // Include document ID and its data
+  });
+
+  return caretakers;
+};
 
 export const getGuardians = async () => {
-  const q = query(collection(db, 'users'), where('role', '==', 'guardian'));
-  const querySnapshot = await getDocs(q);
-  
-  // Map through the documents and ensure necessary fields have values
-  return querySnapshot.docs.map(doc => {
+  const guardians = [];
+  const querySnapshot = await getDocs(collection(db, 'users')); // Assuming guardians are in 'users' collection
+  querySnapshot.forEach((doc) => {
     const data = doc.data();
-    
-    // Return the data with default values if some fields are missing
-    return {
-      id: data.id || '', 
-      name: data.name || 'Unknown', 
-      state: data.state || '', 
-      dependentName: data.dependentName || '', 
-      dependentStatus: data.dependentStatus || '', 
-      caretakerServiceStatus: data.caretakerServiceStatus || '' 
-    };
+    if (data.role === 'guardian') {
+      guardians.push({ id: doc.id, ...data });
+    }
   });
+  return guardians;
 };
+
+// Fetch care recipient by ID
+export const getCareRecipientById = async (careRecipientId) => {
+  if (!careRecipientId) return null;
+  const careRecipientDoc = await getDoc(doc(db, 'care_recipients', careRecipientId));
+  if (careRecipientDoc.exists()) {
+    return careRecipientDoc.data();
+  }
+  return null;
+};
+export const getCareRecipients = async () => {
+  const careRecipients = [];
+  const querySnapshot = await getDocs(collection(db, 'care_recipients')); // Replace with your collection name if different
+  querySnapshot.forEach((doc) => {
+    careRecipients.push({ id: doc.id, ...doc.data() });
+  });
+  return careRecipients;
+};
+

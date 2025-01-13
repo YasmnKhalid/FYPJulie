@@ -5,6 +5,9 @@ import Login from './pages/login';
 import AdminDashboard from './pages/AdminDashboard';  // Import the Admin Dashboard
 import AdminProfilePage from './pages/AdminProfilePage';
 import GuardianList from './pages/GuardianList';
+import CaretakerList from './pages/CaretakerList';
+import  CareRecipientList from './pages/CareRecipientList';
+
 
 function App() {
   return (
@@ -12,9 +15,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/admin-dashboard" element={<AdminDashboard />} /> {/* Add Admin Dashboard Route */}
-          <Route path="/admin-profile-page" element={<AdminProfilePage />} /> {/* Add Admin Profile Page Route */}
-          <Route path="/guardian-list-page" element={<GuardianList />} /> {/* Add Admin Profile Page Route */}
+          <Route path="/admin-dashboard" element={<AdminDashboard />} /> 
+          <Route path="/admin-profile-page" element={<AdminProfilePage />} /> 
+          <Route path="/guardian-list-page" element={<GuardianList />} /> 
+          <Route path="/caretaker-list-page" element={<CaretakerList />} /> 
+          <Route path="/careRecipient-list-page" element={<CareRecipientList />} /> 
         </Routes>
       </div>
     </Router>

@@ -1,0 +1,50 @@
+body {
+  background-color: #f7f0ff; /* Light lavender */
+}
+button.btn-custom {
+  background-color: #89CFF0; /* Custom background color */
+  border-color: #89CFF0;     /* Custom border color */
+  color: white;              /* Text color */
+}
+  
+button.btn-custom:hover {
+    background-color: #6495ED; /* Darker shade on hover */
+    border-color: #6495ED;     /* Border color on hover */
+}
+ 
+.key-metrics-card {
+  background-color: #7d3ab5; /* Purple theme */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  padding: 20px;
+}
+
+.key-metrics-card .card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.key-metrics-card .metric-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.list-group-item {
+  background-color: #f7f0ff; /* Light lavender for recent activities */
+  color: #5a2d82; /* Purple text */
+  border: none; /* No borders */
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.list-group-item:hover {
+  background-color: #e6dbf3; /* Slightly darker lavender on hover */
+}
+
+h2, h4 {
+  color: #5a2d82; /* Purple for headings */
+}

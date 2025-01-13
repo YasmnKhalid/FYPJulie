@@ -1,87 +1,127 @@
-/* Center-align the table */
-.table-container {
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  /* Add a little padding around the whole container */
-  .page-container {
-    padding: 20px;
-  }
-  
-  /* Button style (if needed for resetting filters or actions) */
-  .button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
+/* General Page Styling */
+.page-container {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
 
-/* Style for the container */
+/* Search and Filter Section */
 .search-filter-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  /* Style for the search bar */
-  .search-input {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    width: 300px;
-  }
-  
-  /* Style for the filter dropdowns */
-  .filter-select {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-left: 10px;
-    width: 200px;
-  }
-/* Style for the table */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #c4a1d6; /* Light purple */
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #7d3ab5; /* Darker purple focus */
+  box-shadow: 0 0 5px rgba(125, 58, 181, 0.5);
+}
+
+.filter-select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #c4a1d6; /* Light purple */
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+  color: #5a2d82; /* Purple text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-select:focus {
+  border-color: #7d3ab5; /* Darker purple focus */
+  box-shadow: 0 0 5px rgba(125, 58, 181, 0.5);
+}
+
+/* Export Button */
+.export-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #5a2d82; /* Purple theme */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: #7d3ab5; /* Slightly lighter purple */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Styling */
+.table-container {
+  overflow-x: auto;
+}
+
 .table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+.table th {
+  background-color: #5a2d82; /* Purple background for headers */
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #f7f0ff; /* Light purple hover effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .search-filter-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-select,
+  .search-input {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-family: Arial, sans-serif;
   }
-  
-  /* Style for the table headers */
-  .table th {
-    background-color: #f4f4f4;
-    padding: 12px;
-    text-align: left;
-    font-weight: bold;
-    border-bottom: 2px solid #ccc;
+
+  .export-container {
+    justify-content: center;
   }
-  
-  /* Style for the table data rows */
-  .table td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Zebra striping for table rows */
-  .table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  /* Hover effect for table rows */
-  .table tr:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
-    
+}

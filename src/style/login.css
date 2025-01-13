@@ -1,59 +1,164 @@
-/* src/components/Login.css */
+body {
+  background-color: #f7f0ff; /* Light lavender */
+  font-family: 'Arial', sans-serif;
+}
+
+h2{
+  color: white;
+}
+
+
 .login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-  }
-  
-  form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #4CAF50;
-  }
-  
-  .login-btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .login-btn:hover {
-    background-color: #45a049;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e6e0f3; /* Soft purple background */
+}
+
+.login-card {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  background-color: #624E88; /* Purple background */
+  padding: 20px;
+  color: white;
+}
+
+
+.logo-container {
+  margin-top: 20px; /* Adjust spacing as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust height to your preference */
+}
+
+.logo {
+  font-size: 48px; /* Adjust size to match your needs */
+  font-family: 'Lora', serif; /* Use Google Fonts if needed */
+  font-weight: bold;
+  color: #ebe3f8; /* Light text color */
+  text-shadow: 2px 2px #4b3675; /* Optional shadow effect */
+}
+
+.login-left h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.login-left p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.register-btn {
+  background-color: white;
+  color: #5a2d82; /* Dark purple */
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #7d3ab5; /* Slightly lighter purple */
+  color: white;
+}
+
+.login-right {
+  flex: 1;
+  padding: 40px;
+}
+
+.login-right h2 {
+  text-align: center;
+  color: #5a2d82; /* Dark purple */
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-label {
+  display: block;
+  font-size: 14px;
+  color: #5a2d82; /* Dark purple */
+  margin-bottom: 5px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c4a1d6; /* Light purple */
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #5a2d82; /* Dark purple */
+  box-shadow: 0 0 5px #b38bc6; /* Glow effect */
+}
+
+.remember-me {
+  color: #7d3ab5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center; /* Aligns checkbox and text vertically */
+  gap: 5px; /* Adds spacing between checkbox and text */
+  font-size: 14px;
+  cursor: pointer; /* Adds a pointer cursor when hovering over the label */
+}
+
+input[type="checkbox"] {
+  margin: 0; /* Removes default margins for the checkbox */
+}
+
+
+.forgot-password {
+  color: #7d3ab5;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #7d3ab5; /* Primary purple */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #5a2d82; /* Darker purple */
+}

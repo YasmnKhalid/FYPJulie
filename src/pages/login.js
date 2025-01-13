@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';  // Import to handle navigation
 import { loginUser } from '../services/authService';  // Import login service
 import { getUserData } from '../services/firestoreService';  // Import Firestore service
 import '../style/login.css';  // Ensure the path to CSS is correct
+import TextLogo from '../components/TextLogo';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -29,36 +30,56 @@ function Login() {
       setError(err.message);  // Display error message
     }
   };
-
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div className="input-group">
-          <label>Email</label>
-          <input 
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            placeholder="Enter your email" 
-            required 
-          />
+      <div className="login-card">
+        <div className="login-left">
+
+          {/* Add the logo here */}
+          <div className="logo-container">
+            <span className="logo">Julie</span>
+          </div>
+          <h2>Welcome!</h2>
+          <p>Caring Made Simple, Lives Made Better</p>
         </div>
-        <div className="input-group">
-          <label>Password</label>
-          <input 
-            type="password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            placeholder="Enter your password" 
-            required 
-          />
+        <div className="login-right">
+          <h2>Sign In</h2>
+          <form onSubmit={handleLogin} className="login-form">
+            <div className="input-group">
+              <label className="input-label">Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+                className="input-field"
+              />
+            </div>
+            <div className="input-group">
+              <label className="input-label">Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                required
+                className="input-field"
+              />
+            </div>
+            <div className="remember-me">
+              <label className="checkbox-label">
+                <input type="checkbox" id="remember" />
+                Remember me
+              </label>
+              <a href="#" className="forgot-password">Forgot password?</a>
+            </div>
+
+            <button type="submit" className="login-btn">LOGIN</button>
+          </form>
         </div>
-        <button type="submit" className="login-btn">Login</button>
-        {error && <p className="error-message">{error}</p>} {/* Display errors */}
-      </form>
+      </div>
     </div>
   );
 }
-
 export default Login;

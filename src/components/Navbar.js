@@ -5,6 +5,15 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import '../style/Navbar.css'; // Custom CSS for navbar
 
 function CustomNavbar({ onExportReport }) {
+  // Logout handler function
+  const handleLogout = () => {
+    // Clear authentication data (e.g., tokens, session storage)
+    localStorage.removeItem('authToken'); // Example for token-based auth
+
+    // Redirect to login page
+    window.location.href = '/login';
+  };
+
   return (
     <Navbar
       bg="light"
@@ -34,14 +43,6 @@ function CustomNavbar({ onExportReport }) {
 
         {/* Export Button */}
         <Nav className="d-flex align-items-center">
-          {/* <Button
-            variant="primary"
-            className="me-3"
-            onClick={onExportReport} // Trigger export functionality
-          >
-            Export Report
-          </Button> */}
-
           {/* Profile Icon */}
           <Nav.Link href="/admin-profile-page">
             <FontAwesomeIcon
@@ -49,6 +50,14 @@ function CustomNavbar({ onExportReport }) {
               style={{ fontSize: '24px', color: '#007bff' }}
             />
           </Nav.Link>
+          <Button
+            className="logout-button ms-3"
+            onClick={handleLogout}
+          >
+            Logout
+          </Button>
+
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>

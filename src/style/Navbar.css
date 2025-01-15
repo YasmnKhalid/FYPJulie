@@ -1,42 +1,66 @@
 body {
-    background-color: #f7f0ff; /* Light lavender */
-    font-family: 'Arial', sans-serif;
-  }
+  background-color: #f7f0ff;
+  /* Light lavender */
+  font-family: 'Arial', sans-serif;
+}
 
 .custom-navbar {
-    background-color: #f8f9fa; /* Default light background */
-    transition: background-color 0.3s ease; /* Smooth transition */
-  }
-  
-  .custom-navbar:hover {
-    background-color: #5a2d82; /* Purple background on hover */
-  }
-  
-  .custom-navbar .navbar-brand {
-    color: #5a2d82; /* Purple text color for the brand */
-    font-weight: bold;
-  }
-  
-  .custom-navbar .navbar-brand:hover {
-    color: #b99de6; /* Lighter color for hover */
-  }
-  
-  .custom-navbar .nav-link {
-    color: #007bff; /* Default link color */
-    transition: color 0.3s ease;
-  }
-  
-  .custom-navbar .nav-link:hover {
-    color: #5a2d82; /* Purple on hover */
-  }
-  
-  .custom-navbar .dropdown-menu {
-    background-color: #f8f9fa; /* Default dropdown background */
-    border: none;
-  }
-  
-  .custom-navbar .dropdown-menu .dropdown-item:hover {
-    background-color: #ebe3f8; /* Light purple for hover */
-    color: #5a2d82; /* Darker purple text */
-  }
-  
+  background-color: #f8f9fa;
+  /* Default light background */
+  transition: background-color 0.3s ease;
+  /* Smooth transition */
+}
+
+.custom-navbar:hover {
+  background-color: #5a2d82;
+  /* Purple background on hover */
+}
+
+.custom-navbar .navbar-brand {
+  color: #5a2d82;
+  /* Purple text color for the brand */
+  font-weight: bold;
+}
+
+.custom-navbar .navbar-brand:hover {
+  color: #b99de6;
+  /* Lighter color for hover */
+}
+
+.custom-navbar .nav-link {
+  color: #007bff;
+  /* Default link color */
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #5a2d82;
+  /* Purple on hover */
+}
+
+.custom-navbar .dropdown-menu {
+  background-color: #f8f9fa;
+  /* Default dropdown background */
+  border: none;
+}
+
+.custom-navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #ebe3f8;
+  /* Light purple for hover */
+  color: #5a2d82;
+  /* Darker purple text */
+}
+
+/* Higher specificity to override Bootstrap styles */
+.navbar .logout-button {
+  background-color: #4b0082 !important;
+  /* Dark purple */
+  color: white !important;
+  border: none !important;
+}
+
+.navbar .logout-button:hover {
+  background-color: black !important;
+  /* Black on hover */
+  color: white !important;
+}

@@ -1,0 +1,135 @@
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    background-color: transparent;
+    /* No background */
+    color: #4e2066;
+    /* Dark purple text */
+    border: none;
+    /* No border */
+    padding: 10px 0;
+    /* Padding for spacing */
+    cursor: pointer;
+    /* Pointer cursor */
+    font-size: 1.1rem;
+    /* Slightly larger font size for visibility */
+    display: flex;
+    /* Flexbox to align icon and text */
+    align-items: center;
+    /* Center icon and text vertically */
+    margin-bottom: 20px;
+    /* Add space below the button */
+    font-weight: bold;
+    /* Bold text for emphasis */
+}
+
+.back-button:hover {
+    color: #6d3998;
+    /* Lighter purple on hover */
+    text-decoration: underline;
+    /* Add underline on hover for emphasis */
+}
+
+.back-button:active {
+    color: #5a2d82;
+    /* Slightly different shade on click */
+    transform: scale(0.98);
+    /* Add a subtle click effect */
+}
+
+.back-icon {
+    margin-right: 8px;
+    /* Space between the icon and text */
+    font-size: 1.2rem;
+    /* Adjust icon size */
+}
+.care-recipients {
+    margin-bottom: 20px;
+  }
+  
+  .recipient-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .recipient-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    width: 250px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .recipient-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .recipient-card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+  
+  .recipient-card:hover {
+    background-color: lavender;
+    transform: scale(1.05);
+  }
+  
+  .recipient-card.selected {
+    border: 2px solid #5a2d82;
+    background-color: rgba(90, 45, 130, 0.1);
+  }
+  
+.profile-container {
+    text-align: left;
+}
+
+.editable-field {
+    margin-bottom: 15px;
+}
+
+.editable-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.editable-field input,
+.editable-field select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.editable-field input:focus,
+.editable-field select:focus {
+    outline: none;
+    border-color: #4e2066;
+}
+
+.save-button {
+    background-color: #4e2066;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.save-button:hover {
+    background-color: #6d3998;
+}

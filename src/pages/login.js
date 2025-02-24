@@ -23,8 +23,12 @@ function Login() {
       if (userData.role === 'admin') {
         console.log('Admin logged in!');
         navigate('/admin-dashboard');  // Navigate to the Admin Dashboard page
+      } else if (userData.role === 'guardian') {
+        console.log('guardian logged in!');
+        navigate('/guardian-dashboard');
       } else {
         setError('You are not authorized as an admin.');
+
       }
     } catch (err) {
       setError(err.message);  // Display error message

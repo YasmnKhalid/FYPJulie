@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getGuardians, getCareRecipientById } from '../services/firestoreService';
-import CustomNavbar from '../components/Navbar';
+import CustomNavbar from '../components/AdminNavbar';
 import { CSVLink } from 'react-csv'; // Import CSV export component
 import '../style/ListStyle.css';
 

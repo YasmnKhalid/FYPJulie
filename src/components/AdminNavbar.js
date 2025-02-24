@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import '../style/Navbar.css'; // Custom CSS for navbar
 
-function CustomNavbar({ onExportReport }) {
+function AdminNavbar({ onExportReport }) {
   // Logout handler function
   const handleLogout = () => {
     // Clear authentication data (e.g., tokens, session storage)
@@ -64,4 +64,4 @@ function CustomNavbar({ onExportReport }) {
   );
 }
 
-export default CustomNavbar;
+export default AdminNavbar;
